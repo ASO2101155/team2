@@ -6,6 +6,14 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <style>
+    body, html {
+      height: 100%;
+    }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
     .back-button {
       position: absolute;
       top: 10px;
@@ -27,25 +35,41 @@
     }
     .container {
       position: relative;
-      top: 50px;
+      text-align: center;
+    }
+    /* Center align the form fields */
+    .form-group {
+      display: flex;
+      margin-left: 270px;
+      margin-bottom: 15px;
+    }
+    /* Adjust width of form fields */
+    .form-control {
+      width: 300px;
+      margin: 0 10px;
+    }
+    /* Center align the submit button */
+    button[type="submit"] {
+      display: block;
+      margin-left: 800px;
     }
   </style>
 </head>
 <body>
   <a class="back-button" href="戻るURL"></a>
   <div class="container">
-    <h2>新規登録</h2>
+    <h2>新規登録</h2><br>
     <form action="登録処理のURL" method="post">
       <div class="form-group">
-        <label for="username">ユーザー名:</label>
+        <label for="username" class="col-form-label">　　ユーザー名：</label>
         <input type="text" class="form-control" id="username" name="username" required>
       </div>
       <div class="form-group">
-        <label for="email">メールアドレス:</label>
+        <label for="email" class="col-form-label">メールアドレス：</label>
         <input type="email" class="form-control" id="email" name="email" required>
       </div>
       <div class="form-group">
-        <label for="password">パスワード:</label>
+        <label for="password" class="col-form-label">　　パスワード：</label>
         <input type="password" class="form-control" id="password" name="password" required>
       </div>
       <button type="submit" class="btn btn-primary">登録</button>
