@@ -40,8 +40,8 @@
     /* Center align the form fields */
     .form-group {
       display: flex;
-      margin-left: 270px;
-      margin-bottom: 15px;
+      justify-content: center;
+      margin-bottom: 50px;
     }
     /* Adjust width of form fields */
     .form-control {
@@ -51,7 +51,18 @@
     /* Center align the submit button */
     button[type="submit"] {
       display: block;
-      margin-left: 800px;
+      margin-left: auto;
+    }
+    
+    /* Media query for mobile devices */
+    @media (max-width: 576px) {
+      .form-group {
+        margin-left: 0;
+      }
+      button[type="submit"] {
+        margin-left: 0;
+        margin-right: 0;
+      }
     }
   </style>
 </head>
