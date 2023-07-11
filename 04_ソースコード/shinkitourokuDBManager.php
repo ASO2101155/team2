@@ -17,5 +17,17 @@ class DBManager{
         $searchArray = $ps -> fetchAll();
         return $searchArray;
     }
+    public function addUser($user_id, $user_name, $mailaddress, $password, $user_img) {
+        $pdo = $this->dbConnect();
+        $sql = "INSERT INTO User_information (user_id, user_name, mailaddress, password, user_img) VALUES (?, ?, ?, ?, ?)";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1, $user_id, PDO::PARAM_INT);
+        $ps->bindValue(2, $user_name, PDO::PARAM_STR);
+        $ps->bindValue(3, $mailaddress, PDO::PARAM_STR);
+        $ps->bindValue(4, $password, PDO::PARAM_STR);
+        $ps->bindValue(5, $user_img, PDO::PARAM_STR);
+        $ps->execute();
+        return $pdo->lastInsertId();
+    }
 }
 ?>
