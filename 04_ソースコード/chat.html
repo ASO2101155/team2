@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>チャット画面</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* 追加のCSSスタイルはここに記述 */
+  </style>
+</head>
+<body>
+  
+  <div class="vertical-line"></div>
+  <div class="horizontal-line2"></div>
+
+  <div id="chat-messages"></div>
+
+  <input type="text" class="textbox-001" id="message-input" placeholder="メッセージを送信">
+  <input type="image" class="sousin" src="file:///C:/Users/renh_/Downloads/sousin.png" alt="送信" onclick="sendMessage()" />
+
+  <input type="image" class="modoru" src="file:///C:/Users/renh_/Downloads/yajirushi-illust6.png" alt="戻る" />
+
+  <button class="switch-button1" onclick="switchUser('Aさん')">Aさん</button>
+  <button class="switch-button2" onclick="switchUser('Bさん')">Bさん</button>
+  <button class="switch-button3" onclick="switchUser('Cさん')">Cさん</button>
+
+  <div id="chat-messages"></div>
+<script>
+    // メッセージを送信する関数
+    function sendMessage() {
+      var messageInput = document.getElementById("message-input");
+      var message = messageInput.value;
+      if (message !== "") {
+        var chatMessages = document.getElementById("chat-messages");
+        var newMessage = document.createElement("p");
+        newMessage.textContent = message;
+        chatMessages.appendChild(newMessage);
+        messageInput.value = "";
+      }
+    }
+
+
+    // ユーザーを切り替える関数
+    function switchUser(user) {
+      // ユーザーの切り替え処理を記述する
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
