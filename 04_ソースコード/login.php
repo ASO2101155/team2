@@ -53,9 +53,7 @@
                     //$error['mail'] = 'eメールアドレスまたはパスワードが違います';
                 //}
             }
-
         }
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -72,28 +70,27 @@
 			<div class="a1">
 			<img src="/team2/game.png" width="490" height="570" >
 		</div>
-        <div class="gamelabel">
+
+	<div class="a2">
+        	<div class="gamelabel">
 			<h1>GAMEコミュニティ</h1>
 		</div>
-        
-        <div class="a2">
             <div class="flexbox">
               <input type='email' name='email' placeholder="メールアドレス" >
-            
             <input type='password' name='password' placeholder="パスワード">
         </div>
-
         <div class="err"><?php echo $error['mail']; ?></div>
         <div class="err"><?php echo $error['password']; ?></div>
         <div class="logbtn">
 	    
             <!--ログインボタン-->
-            
         <div class="button-panel">
-            <button class="btn btn-secondary" type="submit">ログイン</button>
-        </div>
-        <a class="text-dark" href=/team2/entry.php>新規登録はこちら</a>
-            
+  <div class="button-container"> <!-- 新たに追加したdiv要素 -->
+    <button class="btn btn-secondary" type="submit">ログイン</button>
+    <a class="text-dark" href="/team2/entry.php">新規登録はこちら</a>
+  </div>
+</div>
+        
         </div>
     </div>
 </form>
