@@ -1,0 +1,29 @@
+.body{
+    height: 100vh;
+}
+.Main{
+    display: flex;
+    height: 100vh;
+}
+.a1{
+    flex: 5;
+}
+.a2{
+    flex: 5;
+    height: 200px;
+}
+.gamelabel{
+    width: 300px;
+    height: 300px;
+    position: relative; 
+}
+
+.flexbox {/*縦に並べる*/
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .err{
+    color: red;
+    text-align: center;
+}
