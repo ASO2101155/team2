@@ -10,11 +10,10 @@
 }
 .a2{
     flex: 5;
-    height: 200px;
 }
 .gamelabel{
     width: 300px;
-    height: 300px;
+    height: 100px;
     position: relative; 
 }
 
@@ -27,3 +26,49 @@
     color: red;
     text-align: center;
 }
+
+
+.flexbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 横方向の中央揃え */
+  text-align: center;
+}
+
+.flexbox input {
+  padding: 10px; /* テキストボックスの内側の余白 */
+  margin: 20px 5px 10px; /* 上に余白を追加（必要に応じて値を調整） */
+  border: 1px solid #ccc; /* 枠線のスタイルと色 */
+  border-radius: 5px; /* テキストボックスの角の丸み */
+  width: 250px; /* テキストボックスの幅 */
+}
+
+/* プレースホルダーのスタイル */
+.flexbox input::placeholder {
+  color: #999; /* プレースホルダーの文字色 */
+}
+
+.button-panel {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn {
+  margin: 5px;
+}
+
+
+a.text-dark {
+  display: block;
+  text-align: center;
+}
+
+/* 追加したスタイル */
+.button-container {
+  display: flex;
+  flex-direction: column; /* flexboxを縦方向に配置 */
+  align-items: center; /* 中央揃え */
+}
+
+
+
