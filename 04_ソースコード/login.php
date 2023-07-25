@@ -6,9 +6,10 @@
     require_once 'logdbconnect.php';
     $class = new logDBConnect();
     // echo $_POST['email']."<br>";
-    $a = $class->getUsermail(!empty($_POST['email']));
-    // var_dump($a);
-
+    $a = array();
+	if (isset($_POST['email'])) {
+    	$a = $class->getUsermail($_POST['email']);
+	}    
         $error['mail'] = '';
         $error['password'] = '';
 
@@ -41,8 +42,8 @@
                     header('Location: Main.php', true, 307);
                     exit;
                 } else {
-                    $error['mail'] = 'eメールアドレスまたはパスワードが違います'.$_POST['email'].$data."です";
-                }
+                    $error['mail'] = 'eメールアドレスまたはパスワードが違います';
+                }: 
                 //if($data == $pass){
                     //セッションにemailアドレスを挿入する
                     //$_SESSION['mailaddress'] = $email;
@@ -53,9 +54,7 @@
                     //$error['mail'] = 'eメールアドレスまたはパスワードが違います';
                 //}
             }
-
         }
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -77,14 +76,10 @@
         	<div class="gamelabel">
 			<h1>GAMEコミュニティ</h1>
 		</div>
-        
-        
             <div class="flexbox">
               <input type='email' name='email' placeholder="メールアドレス" >
-            
             <input type='password' name='password' placeholder="パスワード">
         </div>
-
         <div class="err"><?php echo $error['mail']; ?></div>
         <div class="err"><?php echo $error['password']; ?></div>
         <div class="logbtn">
