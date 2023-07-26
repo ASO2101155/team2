@@ -12,13 +12,7 @@ $sql = "SELECT * FROM User_information WHERE mailaddress = ?";
 	        $user_id = $row['user_id'];
 		$user_name=$row['user_name'];
 }
-echo $_SESSION['user_id'];
-		$sql = "SELECT * FROM chat WHERE user1_id = ? AND user2_id =?";
-   		$ps = $pdo->prepare($sql);
-		$ps->bindValue(1,5,PDO::PARAM_INT);
-                $ps->bindValue(2,$user_id,PDO::PARAM_INT);
-                $ps->execute();
-                $searchArray1 = $ps->fetchAll();
+
 
 		
 ?>
@@ -49,13 +43,6 @@ echo $_SESSION['user_id'];
 	echo $user_name;
 ?>
 </div>  <!-- 現在のユーザーを表示する領域 -->
-<div id="aaa" style="position: absolute;
-height: 80%;">
-<?php
-		foreach($searchArray1 as $row){
-		echo $row['chat_content']."<br>";
-}
-?>
 </div>
   <script>
     var currentUser = ''; // 現在のユーザーを保持する変数
@@ -77,27 +64,3 @@ height: 80%;">
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
