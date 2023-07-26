@@ -28,8 +28,12 @@
   <link rel="stylesheet" href="css/profile.css">
 </head>
 <body>
+ <a class="modoru2" href="javascript:history.back()">
+
+  <img src="./yajirushi-illust6.png" alt="戻る" / width=30px>
+</a>
   <div class="container">
-    <a class="back-button" href="Main.php"><span></span></a>
+
     <div>
       <form action="fileUpload.php" method="post" enctype="multipart/form-data">
         <img class="profile-image rounded-circle" src="<?=$userimg;?>" alt="プロフィール画像">
