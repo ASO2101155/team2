@@ -1,7 +1,13 @@
 <?php
     $email = "";
     $password = "";
+    $user_id="";
+    $user_name = "";
+    $user_img = "";
+
     $error = array();
+    session_start();
+
     //DBの情報
     require_once 'logdbconnect.php';
     $class = new logDBConnect();
@@ -33,17 +39,23 @@
                 foreach($a as $row){
                     if($_POST['email'] == $row['mailaddress']){
                         $data = $row['pass_word'];
+                        $user_name = $row['user_name'];
+                        $user_img =  $row['user_img'];
+                        $user_id = $row['user_id'];
                     }
                 }
                 if (isset($data) && password_verify($pass, $data)) {
                     // 認証成功
+
                     $_SESSION['mailaddress'] = $mail; // Store the email address in the session
+                    $_SESSION['user_name'] = $user_name; // Store euser_name in the session
+                    $_SESSION['user_img'] = $user_img; // Store user_img in the session
                     // マイページへ遷移
                     header('Location: Main.php', true, 307);
                     exit;
                 } else {
                     $error['mail'] = 'eメールアドレスまたはパスワードが違います';
-                }: 
+                }
                 //if($data == $pass){
                     //セッションにemailアドレスを挿入する
                     //$_SESSION['mailaddress'] = $email;
