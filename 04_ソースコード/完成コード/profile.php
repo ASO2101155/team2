@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="css/profile.css">
 </head>
 <body>
- <a class="modoru2" href="javascript:history.back()">
+ <a class="modoru2" href="Main.php">
 
   <img src="./yajirushi-illust6.png" alt="戻る" / width=30px>
 </a>
